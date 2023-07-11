@@ -32,4 +32,8 @@ public class Wallet {
     public UUID getUUID() {
         return uuid;
     }
+
+    public int getBalance() {
+        return balance;
+    }
 }

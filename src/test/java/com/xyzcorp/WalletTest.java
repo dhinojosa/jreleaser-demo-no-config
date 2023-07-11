@@ -67,4 +67,15 @@ public class WalletTest {
         UUID uuidTwo = new Wallet().getUUID();
         assertThat(uuidOne).isNotEqualTo(uuidTwo);
     }
+
+    @Test
+    @DisplayName("""
+       Adding 10 funds to wallet and removing 10 should
+       be empty""")
+    void testGetBalance() {
+        wallet.addFunds(10);
+        wallet.spendFunds(5);
+        int balance = wallet.getBalance();
+        assertThat(balance).isEqualTo(5);
+    }
 }
